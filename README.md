@@ -1,4 +1,3 @@
-````md
 # Rule Graph Engine
 
 > A lightweight, production-oriented graph processing engine for dependency systems.
@@ -803,7 +802,6 @@ Potential roadmap:
 # License
 
 MIT
-````
 
 
 # Versioning Module
