@@ -1,0 +1,9 @@
+.vscode
+.pycache
+.venv
+__pycache__
+*.pyc
+*.pyo
+# Ignore test files
+tests/
+rule_graph_engine.egg-info

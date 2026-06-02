@@ -1,0 +1,83 @@
+[project]
+name = "rule-graph-engine"
+version = "0.1.0"
+description = "Dependency detection and graph processing engine for rule systems"
+authors = [
+    { name = "Your Name", email = "your@email.com" }
+]
+readme = "README.md"
+requires-python = ">=3.10"
+
+dependencies = [
+    "pydantic>=2.7.0",
+    "networkx>=3.3",
+    "numpy>=1.26.0",
+    "scikit-learn>=1.5.0",
+    "fastapi>=0.111.0",
+    "uvicorn>=0.30.0",
+    "sqlalchemy>=2.0.30",
+    "psycopg2-binary>=2.9.9",
+    "celery>=5.4.0",
+    "redis>=5.0.4",
+    "faiss-cpu>=1.8.0",
+    "sentence-transformers>=3.0.0",
+    "python-dotenv>=1.0.1"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.2.0",
+    "pytest-asyncio>=0.23.7",
+    "black>=24.4.0",
+    "ruff>=0.4.4",
+    "mypy>=1.10.0",
+    "ipython"
+]
+
+
+
+# 🔧 BUILD SYSTEM
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+
+# 🧠 TOOLING CONFIG
+
+## Black (formatter)
+[tool.black]
+line-length = 88
+target-version = ["py310"]
+
+## Ruff (linter)
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B"]
+ignore = ["E501"]
+
+
+
+## MyPy (type checking)
+[tool.mypy]
+python_version = "3.10"
+strict = true
+ignore_missing_imports = true
+
+
+
+## Pytest
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --strict-markers"
+
+
+# ⚙️ SETUPTOOLS CONFIG (for packaging)
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["graph*", "pipeline*", "services*"]
+exclude = ["tests*"]

@@ -1,0 +1,15 @@
+ graph = (
+        GraphNormalizer()
+        .process(graph)
+    )
+
+    graph=(
+        GraphDeduplicator()
+        .process(graph)
+    )
+
+    graph = (
+        GraphValidator()
+        .process(graph)
+    )
+    
